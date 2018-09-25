@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#back1 {
+
+    
+   padding: 100px;
+    
+   background: url(C:/Users/battu.divya/Desktop/d.png);
+   background-size: 100% 100%;
+    }
+</style>
+<style> 
+input[type=text] {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid brown;
+    border-radius: 4px;
+}
+</style>
+<style>
+p{
+color: maroon;
+}
+</style>
+<style>
+.button {
+    background-color: brown; 
+    border: black;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 2px 2px;
+    cursor: pointer;
+	border-radius: 4px;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="back1">
+<center><h1><p>Food Data</p></h1></center>
+
+<table align="center" border="3">
+	<tr>
+		<th><p>Food ID</p></th>
+		<th><p>Name</p></th>
+		<th><p>Type</p></th>
+		<th><p>Food Size</p></th>
+		<th><p>Quantity</p>
+		<th><p>Price</p></th>
+		<th><p>Edit</p></th>
+		<th><p>Delete</p></th>
+		
+	</tr>
+	
+	<c:forEach var="fds" items="${FoodBean}">
+		<tr>
+			<td>${fds.foodId}</td>
+			<td>${fds.fName}</td>
+			<td>${fds.type}</td>
+			<td>${fds.foodSize}</td>
+			<td>${fds.quantity}</td>
+			<td>${fds.price}</td>
+			<td><a href="editFood?foodId=${fds.foodId}">Edit</a></td>  
+    		<td><a href="deleteFood/${fds.foodId}">Delete</a></td>  
+		</tr>
+	
+	
+	</c:forEach>
+	
+
+</table>
+<center><button class="button">Delete</button><center>
+</form>
+</div>
+</body>
+</html>
